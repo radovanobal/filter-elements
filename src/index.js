@@ -168,17 +168,16 @@ export default class FilterElements
     }
 
     updateQueryParams() {
-        let url = new URLSearchParams(location.search);
+        let url = new URL(location.href);
 
         for (let [key, value] of Object.entries(this.filters)) {
             if (value.length == 0) {
-                url.delete(key);
+                url.searchParams.delete(key);
             } else {
-                url.set(key, value);
+                url.searchParams.set(key, value);
             }
         }
 
-        let params = '?' + url.toString();
-        history.replaceState(null, '', params);
+        history.replaceState(null, '', url.toString());
     }
 }
