@@ -1,0 +1,26 @@
+{
+  "name": "@pxlrbt/filter-elements",
+  "version": "1.0.0",
+  "description": "Filter HTML elements based on multiple filters. Supports lists and selects.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxlrbt/js-filter-elements.git"
+  },
+  "author": "Dennis Koch",
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/pxlrbt/js-filter-elements/issues"
+  },
+  "homepage": "https://github.com/pxlrbt/js-filter-elements#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "filter",
+    "tags"
+  ]
+}
