@@ -1,5 +1,7 @@
 export default class BaseObserver {
     constructor() {
+        Object.setPrototypeOf(this, BaseObserver.prototype);
+
         if (new.target === BaseObserver) {
             throw new TypeError("Cannot construct BaseObserver instances directly");
         }
