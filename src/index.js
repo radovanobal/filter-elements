@@ -106,9 +106,9 @@ export default class FilterElements
                 : origin.getAttribute('data-filter-value')
 
         if(this.filters[key] !== value || !this.options.toggleActive){
-            this.filters[key] = value
+            this.filters[key] = value;
         } else {
-            this.filters = this.filters.filter(item => item[key] !== value)
+            this.filters = "";
         }
 
         this.filter();
