@@ -108,7 +108,7 @@ export default class FilterElements
         if(this.filters[key] !== value || !this.options.toggleActive){
             this.filters[key] = value;
         } else {
-            this.filters = "";
+            this.filters[key] = "";
         }
 
         this.filter();
