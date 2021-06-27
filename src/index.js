@@ -1,5 +1,5 @@
 import Subject from "./lib/Subject";
-import { baseObserver } from "./lib/BaseObserver";
+import BaseObserver from "./lib/BaseObserver";
 
 const defaults = {
     handleSelector: '[data-filter-key]',
@@ -116,7 +116,7 @@ export default class FilterElements extends Subject
         }
 
         this.filter();
-        this.notify(baseObserver, origin);
+        this.notify(BaseObserver, origin);
     }
 
     filter() {

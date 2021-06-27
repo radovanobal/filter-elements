@@ -1,6 +1,6 @@
-class BaseObserver {
+export default class BaseObserver {
     constructor() {
-        Object.setPrototypeOf(this, BaseObserver.prototype);
+        this.type = BaseObserver.constructor.name;
 
         if (new.target === BaseObserver) {
             throw new TypeError("Cannot construct BaseObserver instances directly");
@@ -12,4 +12,3 @@ class BaseObserver {
     }
 }
 
-export let baseObserver = new BaseObserver();
