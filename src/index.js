@@ -91,8 +91,6 @@ export default class FilterElements
         this.init();
     }
 
-
-
     filterByQuery() {
         // Not compatible with IE11
         let params = new URLSearchParams(location.search);
@@ -107,12 +105,12 @@ export default class FilterElements
                 ? origin.value
                 : origin.getAttribute('data-filter-value')
 
-        if(!this.filters[key] || !this.options.toggleActive){
+        if(this.filters[key] !== value || !this.options.toggleActive){
             this.filters[key] = value
         } else {
             this.filters = this.filters.filter(item => item[key] !== value)
         }
-        
+
         this.filter();
     }
 
