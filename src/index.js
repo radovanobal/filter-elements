@@ -6,7 +6,8 @@ const defaults = {
     activeClass: '-active',
 
     useQuery: false,
-    filterOnCreate: true
+    filterOnCreate: true,
+    toggleActive: false
 }
 
 export default class FilterElements
@@ -22,6 +23,7 @@ export default class FilterElements
      * @param {string} options.filterableSelector Selector for elements which can be filtered
      * @param {boolean} options.useQuery Whether to look at location.search for filter arguments
      * @param {boolean} options.filterOnCreate Whether to filter elements on creation
+     * @param {boolean} options.toggleActive Whether to toggle a filter when handling events
      *
      */
     constructor(options) {
@@ -61,7 +63,11 @@ export default class FilterElements
                             : el.getAttribute('data-filter-value')
                         : '';
 
-            this.filters[key] = value
+            if(!this.filters[key] || !this.options.toggleActive){
+                this.filters[key] = value
+            } else {
+                this.filters = this.filters.filter(item => item[key] !== value)
+            }
         });
     }
 
