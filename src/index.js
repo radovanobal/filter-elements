@@ -63,11 +63,7 @@ export default class FilterElements
                             : el.getAttribute('data-filter-value')
                         : '';
 
-            if(!this.filters[key] || !this.options.toggleActive){
-                this.filters[key] = value
-            } else {
-                this.filters = this.filters.filter(item => item[key] !== value)
-            }
+            this.filters[key] = value
         });
     }
 
@@ -111,7 +107,12 @@ export default class FilterElements
                 ? origin.value
                 : origin.getAttribute('data-filter-value')
 
-        this.filters[key] = value;
+        if(!this.filters[key] || !this.options.toggleActive){
+            this.filters[key] = value
+        } else {
+            this.filters = this.filters.filter(item => item[key] !== value)
+        }
+        
         this.filter();
     }
 
