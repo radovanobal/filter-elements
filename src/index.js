@@ -1,3 +1,6 @@
+import Subject from "./lib/Subject";
+import BaseObserver from "./lib/BaseObserver";
+
 const defaults = {
     handleSelector: '[data-filter-key]',
     targetSelector: 'body',
@@ -10,7 +13,7 @@ const defaults = {
     toggleActive: false
 }
 
-export default class FilterElements
+export default class FilterElements extends Subject
 {
     /**
      * Set a class on elements based on filters.
@@ -27,6 +30,7 @@ export default class FilterElements
      *
      */
     constructor(options) {
+        super();
         this.options = Object.assign({}, defaults, options);
         this.init();
 
@@ -112,6 +116,7 @@ export default class FilterElements
         }
 
         this.filter();
+        this.notify(BaseObserver, origin);
     }
 
     filter() {
