@@ -15,7 +15,7 @@ export default class Subject {
      * @throws Error
      */
     attach(observer){
-        if(observer instanceof BaseObserver || observer.type === BaseObserver.constructor.name){
+        if(observer instanceof BaseObserver || observer.type === "BaseObserver"){
             this.observers.push(observer);
         } else {
             throw new Error('attached object must be instance of BaseObserver!');

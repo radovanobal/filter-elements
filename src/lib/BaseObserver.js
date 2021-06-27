@@ -1,6 +1,6 @@
 export default class BaseObserver {
     constructor() {
-        this.type = BaseObserver.constructor.name;
+        this.type = "BaseObserver";
 
         if (new.target === BaseObserver) {
             throw new TypeError("Cannot construct BaseObserver instances directly");
