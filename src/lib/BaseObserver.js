@@ -1,4 +1,4 @@
-export default class BaseObserver {
+class BaseObserver {
     constructor() {
         Object.setPrototypeOf(this, BaseObserver.prototype);
 
@@ -11,3 +11,5 @@ export default class BaseObserver {
         }
     }
 }
+
+export let baseObserver = new BaseObserver();

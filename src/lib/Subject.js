@@ -1,4 +1,4 @@
-import BaseObserver from "./BaseObserver";
+import { baseObserver } from "./BaseObserver";
 
 export default class Subject {
     constructor() {
@@ -15,7 +15,7 @@ export default class Subject {
      * @throws Error
      */
     attach(observer){
-        if(observer instanceof BaseObserver){
+        if(observer instanceof baseObserver){
             this.observers.push(observer);
         } else {
             throw new Error('attached object must be instance of BaseObserver!');
